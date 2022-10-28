@@ -1,9 +1,11 @@
 //Author - Aryan Mehta <1225456817>
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class urinals {
+    static BufferedReader file_input;
+    static ArrayList<Integer> output_list;
     public static int number_of_free_urinals(String urinals) {
         // Returns the number of free available urinals as per the rule.
         //Base Cases
@@ -49,16 +51,58 @@ public class urinals {
             System.out.println(ans);
         }
     }
-    public static void read_file() throws FileNotFoundException {
-        // Function to read te input .dat file
-        File file=new File("src/urinal.dat");
-        Scanner scan = new Scanner(file);
-        while (scan.hasNextLine()) {
-            String line = scan.nextLine();
-            System.out.println(line);
+    public static int openFile() {
+        try {
+            file_input=new BufferedReader(new FileReader("src/urinal.dat"));
+        } catch (FileNotFoundException e) {
+            return -1;
         }
-
+        return 0;
     }
+    public static int read_file() {
+        String line;
+        output_list = new ArrayList<>();
+        try {
+            if((line = file_input.readLine()) == null){
+                return -1;
+            }
+            while((line) != null) {
+                output_list.add(number_of_free_urinals(line));
+                line = file_input.readLine();
+            }
+        } catch (IOException e) {
+            return -2;
+        }
+        return 0;
+    }
+    public static int writeToFile() {
+        int counter = 1;
+        File f = new File("rule.txt");
+        while(f.exists()) {
+            f = new File("rule" + counter + ".txt");
+            counter++;
+        }
+        FileWriter out;
+        try {
+            out = new FileWriter(f);
+        } catch (IOException e) {
+            return -1;
+        }
+        for (Integer integer : output_list) {
+            try {
+                out.write(integer + "\n");
+            } catch (IOException e) {
+                return -1;
+            }
+        }
+        try {
+            out.close();
+        } catch (IOException e) {
+            return -1;
+        }
+        return 0;
+    }
+
     public static Boolean good_or_bad_string(String input_string){
         // checks to see if valid string is given as input
         if (input_string.length()<1) return false;
@@ -72,8 +116,24 @@ public class urinals {
         }
         return true;
     }
-    public static void main(String[] args) throws FileNotFoundException {
-//        get_keyboard_input_string();
-        read_file();
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("###### MENU #######");
+        System.out.println("Enter 0 for Keyboard Input");
+        System.out.println("Enter 1 for File Input");
+        System.out.print("Enter your choice of option: ");
+        int option=sc.nextInt();
+        if(option==0){
+        get_keyboard_input_string();
+        }
+        else if (option==1) {
+            openFile();
+            read_file();
+            writeToFile();
+        }
+        else{
+            System.out.print("Invalid Input! Please enter a valid input (0 or 1)");
+        }
+
     }
 }

@@ -35,7 +35,7 @@ public class UrinalsTest {
     }
     @Test
     void TestCase4_String_With_Bad_Characters() {
-        System.out.println("====== Aryan Mehta == TEST ONE EXECUTED =======");
+        System.out.println("====== Aryan Mehta == TEST FOUR EXECUTED =======");
         assertEquals(false, urinals.good_or_bad_string("12031"));
         assertEquals(false, urinals.good_or_bad_string("1001910"));
         assertEquals(false, urinals.good_or_bad_string("Aryan"));
@@ -47,5 +47,15 @@ public class UrinalsTest {
         assertEquals(-1, urinals.number_of_free_urinals("0011@#"));
         assertEquals(-1, urinals.number_of_free_urinals("001100011"));
     }
+    @Test
+    public void TestCase5_test_open_file(){
+        //Check if it reads the file
+        System.out.println(" ====== Aryan Mehta ==== TEST FIVE EXECUTED =======");
+        //String output based on the example
+        assertEquals(0, urinals.openFile());
+    }
 }
+
+
+
 
