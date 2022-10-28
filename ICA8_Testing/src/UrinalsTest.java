@@ -3,10 +3,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UrinalsTest {
-//    private urinals urinal_object= new urinals();
-
     @Test
     void TestCase1_Check_Input_String() {
+        //Testcases to check if provided input string is good or bad.
         System.out.println("====== Aryan Mehta == TEST ONE EXECUTED =======");
         assertEquals(false, urinals.good_or_bad_string("1101"));
         assertEquals(true, urinals.good_or_bad_string("1001"));
@@ -14,6 +13,7 @@ public class UrinalsTest {
 
     @Test
     void TestCase2_Check_Keyboard_Output() {
+        //Normal Testcases to check basic functionality of code gives correct output.
         System.out.println("====== Aryan Mehta == TEST TWO EXECUTED =======");
         assertEquals(0, urinals.number_of_free_urinals("1001"));
         assertEquals(3, urinals.number_of_free_urinals("00000"));
@@ -49,7 +49,7 @@ public class UrinalsTest {
     }
     @Test
     public void TestCase5_test_open_file(){
-        //Check if it reads the file
+        //Check if it opens the file
         System.out.println(" ====== Aryan Mehta ==== TEST FIVE EXECUTED =======");
         //String output based on the example
         assertEquals(0, urinals.openFile());
@@ -61,6 +61,16 @@ public class UrinalsTest {
         //String output based on the example
         TestCase5_test_open_file();
         assertEquals(0, urinals.readFile());
+    }
+
+    @Test
+    public void TestCase7_test_write_file(){
+        //Check if it writes the file
+        System.out.println(" ====== Aryan Mehta ==== TEST SEVEN EXECUTED =======");
+        //String output based on the example
+        TestCase5_test_open_file();
+        TestCase6_test_read_file();
+        assertEquals(0, urinals.writeToFile());
     }
 }
 

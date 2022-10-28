@@ -134,6 +134,5 @@ public class urinals {
         else{
             System.out.print("Invalid Input! Please enter a valid input (0 or 1)");
         }
-
     }
 }
