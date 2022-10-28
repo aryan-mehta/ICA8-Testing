@@ -51,7 +51,7 @@ public class urinals {
     }
     public static void read_file() throws FileNotFoundException {
         // Function to read te input .dat file
-        File file=new File("src/input.dat");
+        File file=new File("src/urinal.dat");
         Scanner scan = new Scanner(file);
         while (scan.hasNextLine()) {
             String line = scan.nextLine();

@@ -33,5 +33,19 @@ public class UrinalsTest {
         //String Length=1 and urinal is free
         assertEquals(1, urinals.number_of_free_urinals("0"));
     }
+    @Test
+    void TestCase4_String_With_Bad_Characters() {
+        System.out.println("====== Aryan Mehta == TEST ONE EXECUTED =======");
+        assertEquals(false, urinals.good_or_bad_string("12031"));
+        assertEquals(false, urinals.good_or_bad_string("1001910"));
+        assertEquals(false, urinals.good_or_bad_string("Aryan"));
+        assertEquals(false, urinals.good_or_bad_string("0011@#"));
+        //Final Output
+        assertEquals(-1, urinals.number_of_free_urinals("12031"));
+        assertEquals(-1, urinals.number_of_free_urinals("1001910"));
+        assertEquals(-1, urinals.number_of_free_urinals("Aryan"));
+        assertEquals(-1, urinals.number_of_free_urinals("0011@#"));
+        assertEquals(-1, urinals.number_of_free_urinals("001100011"));
+    }
 }
 
