@@ -65,6 +65,5 @@ public class urinals {
     }
     public static void main(String[] args){
         get_keyboard_input_string();
-
     }
 }

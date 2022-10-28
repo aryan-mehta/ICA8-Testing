@@ -6,9 +6,12 @@ public class UrinalsTest {
 //    private urinals urinal_object= new urinals();
 
     @Test
-    void Testcase1() {
+    void TestCase1_Check_Input_String() {
         System.out.println("====== Aryan Mehta == TEST ONE EXECUTED =======");
-        assertEquals(-1, urinals.number_of_free_urinals("1101"));
+        assertEquals(false, urinals.good_or_bad_string("1101"));
+        assertEquals(false, urinals.good_or_bad_string("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"));
+        assertEquals(true, urinals.good_or_bad_string("1001"));
+
     }
 
 }
