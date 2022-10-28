@@ -8,7 +8,7 @@ public class urinalsTest {
     @Test
     void Testcase1() {
         System.out.println("====== Aryan Mehta == TEST ONE EXECUTED =======");
-        assertEquals(0,1);
+        assertEquals(-1,urinal_object.number_of_free_urinals("1101"));
     }
 
 }
