@@ -59,7 +59,7 @@ public class urinals {
         }
         return 0;
     }
-    public static int read_file() {
+    public static int readFile() {
         String line;
         output_list = new ArrayList<>();
         try {
@@ -128,7 +128,7 @@ public class urinals {
         }
         else if (option==1) {
             openFile();
-            read_file();
+            readFile();
             writeToFile();
         }
         else{

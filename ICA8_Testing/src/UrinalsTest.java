@@ -54,6 +54,14 @@ public class UrinalsTest {
         //String output based on the example
         assertEquals(0, urinals.openFile());
     }
+    @Test
+    public void TestCase6_test_read_file(){
+        //Check if it reads the file
+        System.out.println(" ====== Aryan Mehta ==== TEST SIX EXECUTED =======");
+        //String output based on the example
+        TestCase5_test_open_file();
+        assertEquals(0, urinals.readFile());
+    }
 }
 
 
