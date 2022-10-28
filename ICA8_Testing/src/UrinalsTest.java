@@ -14,5 +14,16 @@ public class UrinalsTest {
 
     }
 
+    @Test
+    void TestCase2_Check_Keyboard_Output() {
+        System.out.println("====== Aryan Mehta == TEST TWO EXECUTED =======");
+        assertEquals(0, urinals.number_of_free_urinals("1001"));
+        assertEquals(3, urinals.number_of_free_urinals("00000"));
+        assertEquals(2, urinals.number_of_free_urinals("0000"));
+        assertEquals(1, urinals.number_of_free_urinals("01000"));
+        assertEquals(0, urinals.number_of_free_urinals("1"));
+        assertEquals(1, urinals.number_of_free_urinals("0"));
+    }
+
 }
 
