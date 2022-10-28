@@ -1,4 +1,6 @@
 //Author - Aryan Mehta <1225456817>
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class urinals {
@@ -47,8 +49,15 @@ public class urinals {
             System.out.println(ans);
         }
     }
-    public static void open_file(){
-        // Function to read te input file
+    public static void read_file() throws FileNotFoundException {
+        // Function to read te input .dat file
+        File file=new File("src/input.dat");
+        Scanner scan = new Scanner(file);
+        while (scan.hasNextLine()) {
+            String line = scan.nextLine();
+            System.out.println(line);
+        }
+
     }
     public static Boolean good_or_bad_string(String input_string){
         // checks to see if valid string is given as input
@@ -63,7 +72,8 @@ public class urinals {
         }
         return true;
     }
-    public static void main(String[] args){
-        get_keyboard_input_string();
+    public static void main(String[] args) throws FileNotFoundException {
+//        get_keyboard_input_string();
+        read_file();
     }
 }
